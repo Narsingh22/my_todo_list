@@ -10,19 +10,20 @@
     <div id="myform">
         <h1>My TODO List</h1>
         <!-- <form action=""> -->
-            <div>
+            <div class="entries">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title">
-                <small>Add an item to the list</small>
             </div>
 
-            <div>
+            <div class="entries">
                 <label for="description">Description</label>
                 <textarea id="description" rows="3"></textarea>
             </div>
 
-            <button id="add">Add to list</button>
-            <button id="clear" onclick="clearStorage()">Clear list</button>
+            <div id="btns">
+                <button id="add">Add to list</button>
+                <button id="clear" onclick="clearStorage()">Clear list</button>
+            </div>
             
         <!-- </form> -->
 

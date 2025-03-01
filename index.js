@@ -9,7 +9,6 @@ function getAndUpdate() {
     if (localStorage.getItem('myTodoList')==null){      
         myArr.push([title, description]);
         localStorage.setItem('myTodoList', JSON.stringify(myArr));
-        
     }
     else {        
         myStr = localStorage.getItem('myTodoList');
@@ -41,16 +40,17 @@ function update() {
                 <td><button id="dlt" onclick="deleted(${index})">Delete</button></td>
             </tr>`;
        
-
     });
 
     tableBody.innerHTML = str;
+    title.value = "";
+    description.value = "";
 
 }
 
 let add = document.getElementById("add");
 add.addEventListener("click", getAndUpdate);
-
+update();
 
 function deleted(itemIndex) {
     myStr = localStorage.getItem('myTodoList');
@@ -61,9 +61,11 @@ function deleted(itemIndex) {
 }
 
 function clearStorage() {
-    if(confirm("Do you really want to clear?")){
-        localStorage.clear();
-        myArr.splice(0);
-        update();
+    if(localStorage.getItem('myTodoList')!=null){
+        if(confirm("Do you really want to clear?")){
+            localStorage.clear();
+            myArr.splice(0);
+            update();
+        }
     }
 }
