@@ -119,10 +119,3 @@ td {
         font-size: 14px;
     }
 }
-
-/* <tr>
-                <th>${index + 1}</th>
-                <td>${element[0]}</td>
-                <td>${element[1]}</td>
-                <td><button id="dlt" onclick="deleted(${index})">Delete</button></td>
-            </tr> */
