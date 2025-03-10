@@ -85,6 +85,15 @@ td {
     cursor: pointer;
 }
 
+.input {
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    width: 50%;
+    outline: none;
+}
+
 @media screen and (max-width: 1200px){
     div#myform {
         width: 70%;
@@ -110,3 +119,10 @@ td {
         font-size: 14px;
     }
 }
+
+/* <tr>
+                <th>${index + 1}</th>
+                <td>${element[0]}</td>
+                <td>${element[1]}</td>
+                <td><button id="dlt" onclick="deleted(${index})">Delete</button></td>
+            </tr> */

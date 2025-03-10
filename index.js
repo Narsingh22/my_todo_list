@@ -20,27 +20,19 @@ function getAndUpdate() {
 }
 
 function update() {
-    if (localStorage.getItem('myTodoList')==null){
-        myArr.splice(0);  
-    }
-    else {
-        myStr = localStorage.getItem('myTodoList');
-        myArr = JSON.parse(myStr);
-    }
-
     let str = '';
 
     myArr.forEach((element, index) => {
-      
-            str += `
-            <tr>
-                <th>${index + 1}</th>
-                <td>${element[0]}</td>
-                <td>${element[1]}</td>
-                <td><button id="dlt" onclick="deleted(${index})">Delete</button></td>
-            </tr>`;
-       
+       str += `
+       <tr>
+            <th>${index + 1}</th>
+            <td><input type="text" class="input" value="${element[0]}"></td>
+            <td><input type="text" class="input" value="${element[1]}"></td>
+            <td><button id="dlt" onclick="deleted(${index})">Delete</button></td>
+        </tr>
+       `
     });
+    console.log(str)
 
     tableBody.innerHTML = str;
     title.value = "";
