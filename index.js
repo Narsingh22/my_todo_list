@@ -20,6 +20,15 @@ function getAndUpdate() {
 }
 
 function update() {
+    if(localStorage.getItem('myTodoList')==null) {
+        myArr = [];
+        localStorage.setItem('myTodoList', JSON.stringify(myArr));
+    }
+    else {
+        myStr = localStorage.getItem('myTodoList');
+        myArr = JSON.parse(myStr);
+    }
+    
     let str = '';
 
     myArr.forEach((element, index) => {
@@ -32,17 +41,14 @@ function update() {
         </tr>
        `
     });
-    console.log(str)
 
     tableBody.innerHTML = str;
     title.value = "";
     description.value = "";
-
 }
-
+update();
 let add = document.getElementById("add");
 add.addEventListener("click", getAndUpdate);
-update();
 
 function deleted(itemIndex) {
     myStr = localStorage.getItem('myTodoList');
